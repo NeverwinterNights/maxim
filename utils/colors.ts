@@ -6,8 +6,9 @@
 // }
 
 
-
-export default  {
+export const colors = {
     primary: "#fc5c65",
+    medium: "#6e6969",
+    light: "#e2dede",
 
 }
