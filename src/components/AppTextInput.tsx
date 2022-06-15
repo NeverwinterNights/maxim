@@ -7,13 +7,14 @@ import {MaterialCommunityIcons} from "@expo/vector-icons";
 type  AppTextInputPropsType = {
     icon?: keyof typeof MaterialCommunityIcons.glyphMap
     width?: number
+    customStyles?: Object
 }
 
-export const AppTextInput = ({icon, width, ...restProps}: AppTextInputPropsType & TextInputProps) => {
+export const AppTextInput = ({icon, width, customStyles,  ...restProps}: AppTextInputPropsType & TextInputProps) => {
     return (
         <View style={[styles.container, {width: width}]}>
             {icon && <MaterialCommunityIcons name={icon} style={styles.icon} size={20} color={colors.medium}/>}
-            <TextInput placeholderTextColor={colors.medium} style={defaultStyles.text} {...restProps}/>
+            <TextInput placeholderTextColor={colors.medium} style={[defaultStyles.text, customStyles]} {...restProps}/>
         </View>
     );
 };

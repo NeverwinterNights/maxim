@@ -15,12 +15,11 @@ export const Card = ({children, style}:CardPropsType) => {
 const styles = StyleSheet.create({
   container: {
       elevation: 8,
-      // width: 330,
       shadowColor: "black",
-      shadowOffset: {width: 0, height: 2},
-      shadowRadius: 6,
+      shadowOffset: {width: 0, height: 0},
+      shadowRadius: 2,
       shadowOpacity: 0.26,
       padding:20,
-      borderRadius:10,
+      borderRadius:2,
   }
 });

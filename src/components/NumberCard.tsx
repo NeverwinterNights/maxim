@@ -2,23 +2,27 @@ import {StyleSheet, View} from 'react-native';
 import AppText from "./AppText";
 import {colors} from "../../utils/colors";
 
-type  HeaderPropsType = {
-    title: string
-}
-export const Header = ({title}: HeaderPropsType) => {
+
+export const NumberCard = ({children}: any) => {
     return (
         <View style={styles.container}>
-            <AppText>{title}</AppText>
+            <AppText style={styles.number}>{children}</AppText>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
-        height: 90,
+        borderWidth: 2,
         backgroundColor: colors.purple,
+        padding: 10,
+        borderRadius: 10,
+        marginVertical: 10,
         alignItems: "center",
         justifyContent: "center",
+    },
+    number: {
+        color: colors.light,
+        fontSize:22,
     }
 });
