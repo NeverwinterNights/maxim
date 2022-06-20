@@ -8,7 +8,7 @@ type  HeaderPropsType = {
 export const Header = ({title}: HeaderPropsType) => {
     return (
         <View style={styles.container}>
-            <AppText>{title}</AppText>
+            <AppText style={{fontFamily: "open-sans-bold", fontSize:20}}>{title}</AppText>
         </View>
     );
 };

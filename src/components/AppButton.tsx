@@ -3,10 +3,9 @@ import {StyleSheet, Text, TouchableOpacity} from "react-native";
 import {colors} from "../../utils/colors";
 
 
-
 type  ButtonPropsType = {
     title: string
-    onPress?: () => void
+    onPress?: (value?: any) => void
     color?: keys
 }
 type keys = keyof typeof colors;
@@ -37,7 +36,8 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 18,
         textTransform: "uppercase",
-        fontWeight: "bold",
+        // fontWeight: "bold",
+        fontFamily: "open-sans-bold",
     },
 });
 

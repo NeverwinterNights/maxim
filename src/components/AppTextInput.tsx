@@ -1,4 +1,4 @@
-import {StyleSheet, TextInput, TextInputProps, View} from 'react-native';
+import {StyleProp, StyleSheet, TextInput, TextInputProps, TextStyle, View} from 'react-native';
 
 import {colors} from "../../utils/colors";
 import defaultStyles from "../../utils/styles"
@@ -7,14 +7,14 @@ import {MaterialCommunityIcons} from "@expo/vector-icons";
 type  AppTextInputPropsType = {
     icon?: keyof typeof MaterialCommunityIcons.glyphMap
     width?: number
-    customStyles?: Object
+    style?: StyleProp<TextStyle>
 }
 
-export const AppTextInput = ({icon, width, customStyles,  ...restProps}: AppTextInputPropsType & TextInputProps) => {
+export const AppTextInput = ({icon, width, style, ...restProps}: AppTextInputPropsType & TextInputProps) => {
     return (
         <View style={[styles.container, {width: width}]}>
             {icon && <MaterialCommunityIcons name={icon} style={styles.icon} size={20} color={colors.medium}/>}
-            <TextInput placeholderTextColor={colors.medium} style={[defaultStyles.text, customStyles]} {...restProps}/>
+            <TextInput placeholderTextColor={colors.medium} style={[defaultStyles.text, style]} {...restProps}/>
         </View>
     );
 };
